@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>4-1</title>
+        <style>
+
+            /* 
+                display : none
+                    -태그를 브라우저 화면에서 제거(자리공간 포함)
+                    -visibility:hidden은 자리공간 남음
+
+                display:block
+                    -inline 태그를 block태그로 변환
+                    -세로방향 태그출력
+                    -width,height 속성 적용됨
+
+
+                display: inline
+                    -block태그를 inline태그로 변환 
+                    -가로방향 태그출력
+                    -width,height 속성 적용안됨
+
+                display :inline-block
+                    -가로방향 태그출력(inline)
+                    -width,height 속성 적용(block) 
+            */
+             .box1 > span:nth-child(2){ display: none; } 
+             .box1 > span:nth-child(1){ visibility: hidden;}
+             .box2 > span:nth-child(2){ display: block;}
+             .box3 > div:nth-child(2){ display:inline; }
+             .box4 > * {display:inline-block;
+                        width:100px;
+                        height:100px;
+                        background: orange;
+             }
+
+
+
+        </style>
+    </head>
+    <body>
+        <h3>1.CSS display 속성</h3>
+
+        <h4>display:none</h4>
+        <div class="box1">
+            <span>TEXT1</span>
+            <span>TEXT2</span>
+            <span>TEXT3</span>
+        </div>
+        <h4>display:block</h4>
+        <div class="box2">
+            <span>TEXT1</span>
+            <span>TEXT2</span>
+            <span>TEXT3</span>
+        </div>
+        <h4>display:inline</h4>
+        <div class="box3">
+            <span>TEXT1</span>
+             <div>TEXT2</div>
+            <span>TEXT3</span>
+        </div>
+        <h4>display:inline-block</h4>
+        <div class="box4">
+            <span>TEXT1</span>
+             <div>TEXT2</div>
+            <span>TEXT3</span>
+        </div>
+
+
+    </body>
+</html>
