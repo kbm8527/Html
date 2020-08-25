@@ -1,0 +1,195 @@
+main > section > nav {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+main > section > nav > h1 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', '돋움', sans-serif;
+    padding: 10px;
+    line-height: 1em;
+}
+
+main > section > nav > p {
+    float: right;
+    margin-top: 10px;
+}
+main > section > nav > p > strong {
+    font-weight: bold;
+}
+
+main > #list > .sort {
+    border-bottom: 1px solid #dfdfdf;
+    overflow: hidden;
+}
+ul, ol {
+    list-style: none;
+}
+
+main > #list > section > article {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #ececec;
+}
+main > #list > section > article > ul {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main > #list > section > article > ul > li:nth-child(1){
+    width: 20%;
+    padding: 0;
+}
+main > #list > section > article > ul > li:nth-child(2){
+    width: 40%;
+}
+main > #list > section > article > ul > li:nth-child(3){
+    width: 20%;
+}
+main > #list > section > article > ul > li:nth-child(4){
+    width: 20%;
+}
+main > #list > section > article .thumb {
+    text-decoration: none;
+    color: #111;
+}
+
+main > #list > section > article .thumb > img {
+    width: 100%;
+}
+main > #list > .sort > li {
+    float: left;
+    position: relative;
+    padding: 15px 0;
+    line-height: 15px;
+}
+
+main > #list > .sort > li > a {
+    display: block;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+}
+
+main > #list > section > article > ul > li {
+    display: list-item;
+    position: relative;
+    float: left;
+    height: 100%;
+    padding: 30px 10px;
+    box-sizing: border-box;
+}
+
+main > #list > section > article .name {
+    font-size: 16px;
+    font-family: 'Malgun Gothic', '돋움', sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+main > #list > section > article .desc {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+main > #list > section > article .desc > a {
+    font-size: 12px;
+    font-family: 굴림;
+    color: rgb(51,51,51);
+    text-decoration: none;
+}
+
+main > #list > section > article .desc > a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+main > #list > section > article .dis_price > ins {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+main > #list > section > article .org_price > span{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+}
+main > #list > section > article span.freeshipping {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: text-bottom;
+    width: 55px;
+    height: 13px;
+    background: url(../img/ico_freeshipping.gif) no-repeat;
+    margin-top: 4px;
+}
+main > #list > section > article .seller {
+    color: #444;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.badgepower {
+    background-image: url(../img/ico_power_dealer.gif);
+    font-size: 0;
+    width: 80px;
+    height: 19px;
+    background-repeat: no-repeat;
+}
+.ratingstar1 {
+    width: 50px;
+    font-size: 11px;
+    background-image: url(../img/rating_star.png);
+    background-repeat: no-repeat;
+    background-position: 36px 0;
+    background-size: auto 100%;
+    display: block;
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+}
+
+/* list */
+
+
+
+
+#list > .paging {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#list > .paging > span > a {
+    color:#777;
+    font-size: 11px;
+    letter-spacing: -1px;
+}
+#list > .paging > span > a:hover {
+    text-decoration: underline;
+}
+#list > .paging > .num > a {
+    display: inline-block;
+    min-width: 14px;
+    margin: 0 2px;
+    padding: 8px 9px;
+    border: 1px solid #c4c4c4;
+    background: url() 0 0 repeat-x;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+#list > .paging > .num > a:hover {
+    border: 1px solid #454c5f;
+    text-decoration: none;
+}
+#list > .paging > .num > a.on {
+    color: #fe434c;
+    font-weight: bold;
+}

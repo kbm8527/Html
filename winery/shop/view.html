@@ -13,30 +13,71 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-
     
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+
+
     <!-- 제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- 슬릭 js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/jsvascript" src="/winery/js/function.js"></script>
+  
 
-    
-    
-    
-    
     <link rel="stylesheet" href="/winery/css/index.css">
     
 
-
     <style>
-  
-        
-      
+        .t_banner {
+            position: relative;
+            background: #111 url('/winery/img/t-banner.png') 40% 60%/cover no-repeat;
+            display: block;
+        }
+        .l_container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: .625rem;
+            padding-left: .625rem;
+        }
+
+        .tb_inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            padding-top: 50px;
+            text-align: center;
+        }
+        .tb_inner h2 {
+            color: #fff;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .t_page {
+            padding: 100px 0 100px;
+            background-color:#f5f6f7 ;
+        }
+        .breadcrumbs {
+            position: static;
+        }
+
+
+        .tl_grid {
+            /*grid-template: auto/repeat(2, minmax(0,1fr));*/
+            grid-template-columns: 2f 1fr;
+
+        }
+        .thumbnail_gallery {
+            width: ;
+        }
 
     </style>
-   
+    
     
 </head>
 <body>
@@ -45,7 +86,7 @@
             <!-- 헤더 영역-->
             <header class="header">
                 <div class="header_inner">
-                    <a class="headerlogo" href="#" ><span><img src="img/logo-01.svg" alt=""></span></a>
+                    <a class="headerlogo" href="#" ><span><img src="/winery/img/logo-01.svg" alt=""></span></a>
                     <nav class="nav" role="navigation">
                         <ul class="nav_list">
                             <li class="nav_item"> <!--서브네비게이션 있음-->
@@ -253,136 +294,132 @@
                 </div>
             </header>
             <!--메인 영역-->
-            <main class="main">
-                <section class="home_banner" > 
-                    <div class="container">
-                        <div class="home_banner_inner">
-                            <h2>Welcome To</h2> <br>
-                            <h2>Winery Tour</h2>
+            
+                <!-- 투어 보기-->
+                <main class="l_main" role="main">
+                    <section class="t_banner">
+                        <div class="l_container">
+                            <div class="tb_inner">
+                                <h2>Half-Day Tour</h2>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <div class="t_page">
+                        <div class="l_container">
+                            <nav class="breadcrumbs">
+                                <ul class="breadcrumbs_list">
+                                    <li class="breadcrumbs_item">
+                                        <a class="breadcrumbs_link" href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumbs_item">
+                                        <a class="breadcrumbs_link" href="#">View</a>
+                                    </li>
+                                    <li class="breadcrumbs_item">
+                                        <a class="breadcrumbs_link" href="#">HALF-TOURS</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <br>
+                            <div class="tl_grid">
+                                <div>                                    
+                                    <div class="thumbnail_gallery">
+                                        <div class="tg_wrapper">
+                                            <div class="tg swiper">
+                                                <div class="swiper_wrapper">
 
-                <!--best banner-->
-               
-                <div class="best_k">
-                    <div class="container">
-                        <div class="best_k_header">
-                                    <h1>Winery Tours : New Zealand's #1 Tour Company</h1>
-                        </div>
-                        <div class="grid">
-                            <div class="best_title">
-                                <div class="title_icon">
-                                    <span class="icon_wrapper">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <div class="subtitle">
-                                        <b>Small Groups</b>
+                                                    <div class="swiper_slide swiper_slide" style="width: 500px;">
+                                                        <a href="#">
+                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                <img src="/winery/img/half.png" alt="Half-Day">
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- 슬라이드 이미지1 -->
+                                                    <div class="swiper_slide swiper_slide-next" style="width: 500px;">
+                                                        <a href="#">
+                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                <img src="/winery/img/full.png" alt="Half-Day">
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- 슬라이드 이미지2 -->
+                                                    <div class="swiper_slide swiper_slide-next" style="width: 500px;">
+                                                        <a href="#">
+                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                <img src="/winery/img/private.png" alt="Half-Day">
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- 슬라이드 이미지3 -->
+                                                    
+                                                </div>    
+                                            </div>
+                                        </div>
                                     </div>
-                                    With a maximum of 10poeple,
-                                </div>   
-                            </div>
-                            <div class="best_title">
-                                <div class="title_icon">
-                                    <span class="">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <div class="subtitle">
-                                        <b>Small Groups</b>
+                                    
+                                    <div class="tc_content">
+                                        <h3 class="heading3">Half-Day Tour</h3>
+                                       
+                                            
+                                        <div>
+                                        <p class="tc_description">
+                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+                                            투어 상세설명
+
+                                        </p>
+                                        <p class="tc_description">
+                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+                                            투어 상세설명
+
+                                        </p>
+                                        <p class="tc_description">
+                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+                                            투어 상세설명
+
+                                        </p>
+                                        
+                                        </div>
+                                
+                                                    
                                     </div>
-                                    With a maximum of 10poeple,
-                                </div>
-                            </div>
-                            <div class="best_title">
-                                <div class="title_icon">
-                                    <span class="">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <div class="subtitle">
-                                        <b>Small Groups</b>
-                                    </div>
-                                    With a maximum of 10poeple,
-                                </div>
-                            </div>
-                            <div class="best_title">
-                                <div class="title_icon">
-                                    <span class="">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <div>
-                                    <div class="subtitle">
-                                        <b>Small Groups</b>
-                                    </div>
-                                    With a maximum of 10poeple,
-                                </div>
-                            </div>
+                                    <section class="side_box">
+                                        <div>
+                                            <h3 class="heading3">Half-Day Tour</h3>
+                                            <dl>
+                                                <div>
+                                                    <dt>Days</dt>
+                                                    <dd>1</dd>
+                                                </div>
+                                                <div>
+                                                    <dt>Price</dt>
+                                                    <dd>50,000</dd>
+                                                </div>
+                                            </dl>
+                                            <div class="button">
+                                                <button type="button" class="t_button">
+                                                    book
+                                                </button>
+                                            </div>
+                                            <div class="button">
+                                                <a class="t_button" href="#">Contact us</a>
+                                            </div>
+                                        </div>
+
+
+                                    </section>
+
+
+
+
+
+                                  
+                                </div>                                       
+                                           
+                            </div>            
                         </div>
                     </div>
-                </div>
-                <section class="tcate">
-                    <ul class="tcate_list">
-                        <li class="tcate_item">
-                            <a class="tcate_link" href="#" style="background-image: url('img/half.png');">
-                                <div class="tcate_link_head">
-                                    <div class="tcate_link-icon">
-                                        <i class="fas fa-wine-bottle"></i>
-                                    </div>
-                                    <h2 class="chead">
-                                        Winery <br>
-                                        Tour
-                                    </h2>
-                                </div>
-                                <p>
-                                    View our great range of New Zealand Tours.
-                                </p>
-                                <div class="tcate_link-overlay" style="background-color:rgb(68,120,100);"></div>
-                            </a>
-                        </li>
-                        <li class="tcate_item">
-                            <a class="tcate_link" href="#" style="background-image: url('img/full.png');">
-                                <div class="tcate_link_head">
-                                    <div class="tcate_link-icon">
-                                        <i class="fas fa-wine-bottle"></i>
-                                    </div>
-                                    <h2 class="chead">
-                                        Winery <br>
-                                        Tour
-                                    </h2>
-                                </div>
-                                <p>
-                                    View our great range of New Zealand Tours.
-                                </p>
-                                <div class="tcate_link-overlay" style="background-color:rgb(68,120,100);"></div>
-                            </a>
-                        </li>
-                        <li class="tcate_item">
-                            <a class="tcate_link" href="#" style="background-image:url('img/private.png');">
-                                <div class="tcate_link_head">
-                                    <div class="tcate_link-icon">
-                                        <i class="fas fa-wine-bottle"></i>
-                                    </div>
-                                    <h2 class="chead">
-                                        Winery <br>
-                                        Tour
-                                    </h2>
-                                </div>
-                                <p>
-                                    View our great range of New Zealand Tours.
-                                </p>
-                                <div class="tcate_link-overlay" style="background-color:rgb(68,120,100);"></div>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                   
-            </main>
+                </main>
+
 
             <!--푸터 영역-->
             <footer class="footer">
@@ -390,7 +427,7 @@
                     <div class="container">
                         <div class="footer_grid">
                             <div class="footer_brand">
-                                <a  aria-current="page" class="headerlogo" href="#"><span><img src="img/logo-02.svg" alt="로고"></span></a>
+                                <a  aria-current="page" class="headerlogo" href="#"><span><img src="/winery/img/logo-02.svg" alt="로고"></span></a>
                                 <address class="footer_contact">
                                     <dl>
                                         <div>
@@ -493,40 +530,40 @@
     <script>
    
         // 헤더 스크롤
-         $(function(){
-        
-         var $header = $('.header');
-         $(window).scroll(function(){
-         if($(this).scrollTop() > 0){
-             $header.addClass('sticky');
-         }else{
-             $header.removeClass('sticky');
-         }
-         });
-
-
-
-         // 슬릭슬라이드
-
-         $('.swiper_wrapper').slick({
-           slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
-           infinite : true, 	//무한 반복 옵션	 
-           slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
-           slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
-           arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
-           dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
-           autoplay : false,			// 자동 스크롤 사용 여부
-           draggable : true, 	//드래그 가능 여부 
-        
-         });
-
-
-         });
-
-
-
+     $(function(){
+     
+     var $header = $('.header');
+     $(window).scroll(function(){
+     if($(this).scrollTop() > 0){
+         $header.addClass('sticky');
+     }else{
+         $header.removeClass('sticky');
+     }
+     });
+     
+     
+     
+     // 슬릭슬라이드
+     
+     $('.swiper_wrapper').slick({
+       slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
+       infinite : true, 	//무한 반복 옵션	 
+       slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
+       slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
+       arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
+       dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
+       autoplay : false,			// 자동 스크롤 사용 여부
+       draggable : true, 	//드래그 가능 여부 
+     
+     });
+     
+     
+     });
+     
+     
+     
     </script>
 
-  
+
 </body>
 </html>

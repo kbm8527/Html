@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>케이마켓::상품목록</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="./js/gnb.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <style>
+       
+       #product-list {
+            float: right;
+            width: 80%;
+            min-height: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #product-list > nav {
+            position: relative;
+            width: 100%;
+            height: 46px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #c0c0c0;
+            box-sizing: border-box;
+        }
+        #product-list > nav > h3 {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        #product-list > nav > p {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+        #product-list > nav strong {
+            font-weight: bold;
+        }
+
+        .list {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .list > section {
+            margin-bottom: 16px;
+        }
+        .list > section > div {
+            margin-bottom: 10px;
+        }
+        #product-list select {
+            width: 150px;
+            padding: 6px;
+            border: 1px solid #959595;
+            font-size: 13px;
+            background-color: #fefefe;
+            color: #333;
+            box-sizing: border-box;
+        }
+        #product-list input {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #959595;
+            font-size: 13px;
+            background-color: #fefefe;
+            color: #333;
+            vertical-align: middle;
+            box-sizing: border-box;
+
+        }
+        .list table {
+            border-top: 2px solid #8798a3;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .list table tr > th {
+            padding: 10px 0;
+            background:#f6f6f6;
+            font-weight: bold;
+        }
+
+        #product-list input[type=checkbox] {
+            width: auto;
+            margin-right: 6px;
+        }
+        section > table tr > td:nth-child(1) {
+            width: 20px;
+        }
+        section > table tr > td:nth-child(2) {
+            width: 80px;
+        }
+        section > table tr > td:nth-child(3) {
+            width: 80px;
+        }
+        section > table tr > td:nth-child(4) {
+            width: auto;
+            text-align: left;
+        }
+        section > table tr > td:nth-child(5) {
+            width: 80px;
+        }
+        section > table tr > td {
+            background: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        section > table img.thumb {
+            width: 60px;
+        }
+
+        #product-list .list input[type=button] {
+            float: left;
+            width: 100px;
+            margin-top: 10px;
+        }
+      
+        .list table tr > td {
+            border-top: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 10px;
+        }
+
+
+      
+          /* 페이징 */
+        .list div {
+            overflow: hidden;
+        }
+
+
+       
+        #product-list .paging {
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        #product-list .paging > span > a {
+            color:#777;
+            font-size: 11px;
+            letter-spacing: -1px;
+        }
+        #product-list .paging > span > a:hover {
+            text-decoration: underline;
+        }
+        #product-list .paging > .num > a {
+            display: inline-block;
+            min-width: 14px;
+            margin: 0 2px;
+            padding: 8px 9px;
+            border: 1px solid #c4c4c4;
+            background: url() 0 0 repeat-x;
+            color: #000;
+            font-size: 12px;
+            text-align: center;
+            text-decoration: none;
+        }
+        #product-list .paging > .num > a:hover {
+            border: 1px solid #454c5f;
+            text-decoration: none;
+        }
+        #product-list .paging > .num > a.on {
+            color: #fe434c;
+            font-weight: bold;
+        }
+
+        p.info {
+            border-color: #8497bf;
+            background: #a8b2c5 url(../img/admin_ico_info.png) no-repeat scroll 15px 16px ;
+        }
+
+        p.ico {
+            width: 100%;
+            height: 58px;
+            margin-top: 20px;
+            border-width: 1px;
+            border-style: solid;
+            padding-left: 50px;
+            line-height: 58px;
+            box-sizing: border-box;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <div id="admin-wrapper">
+        <header>
+            <div>
+                <img src="../img/admin_logo.png" alt="admin_logo">
+                <p>
+                    <span>홍길동님 반갑습니다.</span>
+                    <a href="#">HOME</a>
+                    <a href="#">로그아웃</a>
+                    <a href="#">고객센터</a>
+                </p>
+            </div>
+        </header>
+        <main>
+            <aside>
+                <!-- Global Navigation Bar -->
+                <ul id="gnb">
+                    <li>
+                        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;환경설정</a>
+                        <ol>
+                            <li><a href="#">기본환경설정</a></li>
+                            <li><a href="#">배너관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-store" aria-hidden="true"></i>&nbsp;상점관리</a>
+                        <ol>
+                            <li><a href="#">판매자현황</a></li>
+                            <li><a href="#">재고관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;회원관리</a>
+                        <ol>
+                            <li><a href="#">회원현황</a></li>
+                            <li><a href="#">포인트관리</a></li>
+                            <li><a href="#">비회원관리</a></li>
+                            <li><a href="#">접속자집계</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-box-open" aria-hidden="true"></i>&nbsp;상품관리</a>
+                        <ol>
+                            <li><a href="#">상품현황</a></li>
+                            <li><a href="#">상품등록</a></li>
+                            <li><a href="#">재고관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;주문관리</a>
+                        <ol>
+                            <li><a href="#">주문현황</a></li>
+                            <li><a href="#">매출현황</a></li>
+                            <li><a href="#">결제관리</a></li>
+                            <li><a href="#">배송관리</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;게시판관리</a>
+                        <ol>
+                            <li><a href="#">게시판현황</a></li>
+                            <li><a href="#">고객문의</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </aside>
+            <section id="product-list">
+                <nav>
+                    <h3>상품목록</h3>
+                    <p>
+                        HOME > 상품관리 > <strong>상품목록</strong>
+                    </p>
+                </nav>
+               <!-- 상품목록 컨텐츠 시작 -->
+                <article class="list">
+                    <section>
+                        <div>
+                            <select name="search">
+                                <option value="search1">상품명</option>
+                                <option value="search1">상품코드</option>
+                                <option value="search1">제조사</option>
+                                <option value="search1">판매자</option>
+                            </select>
+                            <input type="text" name="search">
+                        </div>
+                        <table>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" name="all">
+                                </th>
+                                <th>이미지</th>
+                                <th>상품코드</th>
+                                <th>상품명</th>
+                                <th>판매가격</th>
+                                <th>할인율</th>
+                                <th>포인트</th>
+                                <th>재고</th>
+                                <th>판매자</th>
+                                <th>조회</th>
+                                <th>관리</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="상품코드">
+                                </td>
+                                <td>
+                                    <img src="/kmarket/img/thumb-sample-t1.jpg " class="thumb">
+                                </td>
+                                <td>201603292</td>
+                                <td>FreeMovement BLUEFORCE</td>
+                                <td>36,000</td>
+                                <td>10</td>
+                                <td>360</td>
+                                <td>400</td>
+                                <td>홍길동</td>
+                                <td>126</td>
+                                <td>
+                                    <a href="#">[삭제]</a>
+                                    <a href="#">[수정]</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="상품코드">
+                                </td>
+                                <td>
+                                    <img src="/kmarket/img/thumb-sample-t2.jpg " class="thumb">
+                                </td>
+                                <td>201603292</td>
+                                <td>FreeMovement BLUEFORCE</td>
+                                <td>36,000</td>
+                                <td>10</td>
+                                <td>360</td>
+                                <td>400</td>
+                                <td>홍길동</td>
+                                <td>126</td>
+                                <td>
+                                    <a href="#">[삭제]</a>
+                                    <a href="#">[수정]</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="상품코드">
+                                </td>
+                                <td>
+                                    <img src="/kmarket/img/thumb-sample-t3.jpg " class="thumb">
+                                </td>
+                                <td>201603292</td>
+                                <td>FreeMovement BLUEFORCE</td>
+                                <td>36,000</td>
+                                <td>10</td>
+                                <td>360</td>
+                                <td>400</td>
+                                <td>홍길동</td>
+                                <td>126</td>
+                                <td>
+                                    <a href="#">[삭제]</a>
+                                    <a href="#">[수정]</a>
+                                </td>
+                            </tr>
+                        
+                        </table>
+                        <input type="button" value="선택삭제" />
+                                <!-- 상품목록 페이지번호-->
+                        <div class="paging">
+                            <span class="prev">
+                                <a href="#"><&nbsp;이전</a>
+                            </span>
+                            <span class="num">
+                                <a href="#" class="on">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">7</a>
+                            </span>
+                            <span class="next">
+                                <a href="#">다음&nbsp;></a>
+                            </span>
+                        </div>
+                    </section>
+                </article>
+                <p class="ico info">
+                    <strong>Tip!</strong>
+
+                    
+                    전자상거래 등에서의 상품 등의 정보제공에 관한 고시에 따라 총 35개 상품군에 대해 상품 특성 등을 양식에 따라 입력할 수 있습니다.
+                    
+
+                </p>
+
+
+                <!--상품목록 컨텐츠 끝-->
+            </section>
+        </main>
+        <footer>
+            <div>
+            <p>Copyright ©kmarket.co.kr All rights reserved. KMARKET ADMINISTRATOR Version 5.4.1.2</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

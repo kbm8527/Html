@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winery Tour</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+
+
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- 슬릭 js -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+
+
+
+    <link rel="stylesheet" href="/winery/css/index.css">
+    
+
+    <style>
+        .t_banner {
+            position: relative;
+            background: #eee 50% 50%/cover no-repeat;
+        }
+        .t_intro {
+            padding: 95px 0;
+            background-color: #fff;
+        }
+        .t_intro > .l_container {
+            position: relative;
+
+        }
+        .l_container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 1200px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .breadcrumbs {
+            position: absolute;
+            top: -75px;
+            left: 15px;
+        }
+        .breadcrumbs_list {
+            padding: 0;
+            margin: 0;
+            
+        }
+        .breadcrumbs_item {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1;
+            text-transform: uppercase;
+            color: #111;
+        }
+        .breadcrumbs_item:not(:last-of-type):after {
+            content: "|";
+            display: inline-block;
+            padding: 0 10px;
+            
+        }
+        .breadcrumbs_item:last-of-type {
+            font-weight: 500;
+        }
+        .breadcrumbs_item:last-of-type .breadcrumbs_link {
+            pointer-events: none;
+        }
+
+        .breadcrumbs_link {
+            color: #111;
+            text-decoration: none;
+        }
+
+        .t_intro > .l_container > .t_grid {
+            grid-gap: 100px;
+           
+        }
+        .t_grid {
+            display: grid;
+            grid-template-columns: 1fr repeat(1,1fr);
+           
+        }
+        .li  li {list-style:square;}
+
+        .heading1 {
+            margin: 25px 0 10px;
+        }
+        .heading4 {
+            
+            margin: 45px 0 10px;
+        }
+
+
+
+        /* 투어 리스트 */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .l_main {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 543px);
+            margin-top: 0;
+
+        }
+        .tour_list {
+            padding: 95px 0;
+            background-color: #f5f6f6;
+            margin: 0;
+
+        }
+        .l_container {
+            width: 100%;
+            max-width: 73.75rem;
+            padding-right: .625rem;
+            padding-left:.625rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .tl_header {
+            margin-bottom: 200px;
+            text-align:center;
+        }
+
+        .tl_grid {
+            display: grid;
+            grid-template:auto/repeat(3,minmax(0,1fr));
+            grid-gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .tl_grid>*{
+            width: auto;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+        .tcard {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            box-shadow: 0 1px 12px 0 rgba(0,0,0,.05), 0 0 1px 0 rgba(0,0,0,.1);;
+        }
+        .tcard_image {
+            display: flex;
+            background: rgba(0,0,0,.04);
+        }
+        .tcard_image:before {
+            content: "";
+            display: block;
+            float: left;
+            padding-bottom: 60%;
+        }
+        .tcard_image .thumbnail_gallery {
+            width: 100%;
+            padding-bottom: 0;
+        }
+        .tg_wrapper {
+            position: relative;
+        }
+        .tg {
+            position: relative;
+            max-height: 475px;
+            overflow: hidden;
+        }
+
+        .swiper_wrapper {
+            transform: translateZ(0);
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            box-sizing: content-box;
+        }
+
+        .swiper_slide {
+            display: flex;
+            background:rgba(0,0,0,.04) ;
+            flex-shrink: 0;
+            height: 100%;
+            position: relative;
+            transition-property: transform, -webkit-transform;;
+        }
+        .swiper_slide:before {
+            content: "";
+            display: block;
+            float: left;
+            padding-bottom: 61%;
+        }
+        .swiper_slide a {
+            width: 100%;
+            background-color: transparent;
+            text-decoration: underline;
+            outline-width: thin;
+            outline-color: rgba(224,19,86,.25);
+            color: currentColor;
+            transition: color .2s,background-color .2s;
+        }
+        .img_wrapper {
+            width: 100%;
+            height: 100%;
+            filter: blur(0);
+        }
+        .img_wrapper > img {
+            opacity: 1;
+            transition: opacity .3s;
+            position: static;
+        }
+        .swipe_slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        .l_img_wrapper.blur {
+            filter: blur(15px);
+        }
+        .swiper_button-next {
+            right: 0;
+            left: auto;
+            text-align: center;
+        }
+        .swiper_button-prev{
+            left: 0;
+            right: auto;
+            text-align: center;
+
+        }
+        .swiper_button-next ,.swiper_button-prev{
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            background-size: 7px 11px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-color: rgba(0,0,0,.5);
+
+             margin-top: -10px;
+
+
+        }
+
+        .tc_content {
+            position: relative;
+            flex-grow: 1;
+            padding: 25px 25px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .heading3 {
+            line-height:1;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .tc_price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 15px;
+            line-height:1;
+            text-transform: uppercase;
+            color: #111;
+        }
+        .tc_price span {
+            font-size: 14px;
+            color: #222;
+            padding: 0 7px;
+        }
+        .tc_description {
+            padding-right: 90px;
+            line-height:1.5;
+            margin-bottom: 15px;
+        }
+        .t_button {
+            align-self: flex-start;
+            margin-top: auto;
+            color: #111;
+            background-color: transparent;
+            height: 35px;
+            padding: 5px 20px;
+            appearance: none;
+            position: relative;
+            align-items: center;
+            width: auto;
+            justify-content: center;
+            border: 1px solid tomato;
+            border-radius: 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            opacity: 1;
+            visibility: visible;
+            text-decoration: none;
+
+        }
+        .t_button:hover {
+            color: #fff;
+            border-color: tomato;
+            background-color: tomato;
+        }
+/* ------------------------------------------슬릭슬라이드 버튼부분-------------------------------------------- */
+
+/* 버튼 초기화*/
+button {
+    border: 0;
+}
+
+
+/* 슬릭슬라이드 버튼 */
+
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,.6);
+    color: aliceblue;
+    display: inline-block;
+    text-indent: -9999px;
+    font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+
+
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,.6);
+    color: aliceblue;
+    display: inline-block;
+    text-indent: -9999px;
+
+    font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+.slick-prev {
+    left: 0;
+} 
+
+.slick-next{
+    right: 0;
+  
+}
+/* 슬릭슬라이더 화살표는 슬릭안에 있는 CSS를 이용하기 때문에 슬릭버튼을 변경해줘야해 */
+.slick-prev::before{
+    content: "\f053";
+    color: aliceblue;
+    font-size: 15px;
+
+    position: absolute;
+    top: 50%; left: 15px;
+    transform: translateY(-50%);
+    text-indent: 0;
+}
+
+ 
+.slick-next::before{
+  
+    content: "\f054";
+    color: aliceblue;
+    font-size: 15px;
+
+    position: absolute;
+    top: 50%; right: 15px;
+    transform: translateY(-50%);
+    text-indent: 0;
+    
+}
+
+
+
+
+
+
+
+    </style>
+
+
+    </style>
+    
+    
+</head>
+<body>
+    <div id="whole">
+        <div>
+            <!-- 헤더 영역-->
+            <header class="header">
+                <div class="header_inner">
+                    <a class="headerlogo" href="#" ><span><img src="/winery/img/logo-01.svg" alt=""></span></a>
+                    <nav class="nav" role="navigation">
+                        <ul class="nav_list">
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Winery Tours</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View all Tours
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Half-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                  
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Full-Day Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        Private Tour
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                    <ul class="tsnav_list">
+                                                        <li class="tsnav_item">
+                                                            <a class="tsnav_link" href="#">
+                                                                <div class="tsnav_linktitle">말버러 와이너리 투어</div>
+                                                                <div class="tsnav_linkduration">5시간</div>
+                                                                <div class="tsnav_linkprice">50,000원</div>
+                                                                <div class="tsnav_linkmap">지도</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Discover Our Wine</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View All Wines
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       Red Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                       White Wine
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                <div class="tsnav">
+                                                 
+
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">Reviews</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    
+                               </div> 
+                            </li>
+                            <li class="nav_item"> <!--서브네비게이션 있음-->
+                               <div class="nav_main">
+                                    <a class="nav_link" href="#">About Us</a>
+                                    <button type="button" class="nav_link-arrow">
+
+                                    </button>
+                                    <div class="snav_tour">
+                                        <ul class="snav_list">
+                                            <li class="snav_item">
+                                                <a aria-current="page" class="snav_link" href="#">
+                                                    View
+                                                </a>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        About us
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                
+                                                <div class="nav_main">
+                                                    <a class="snav_link" href="#">
+                                                        <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
+                                                        <div class="snav_link-icon">
+                                                           
+                                                        </div>
+                                                        contact
+                                                    </a>
+                                                    <button type="button" class="snav_link-arrow"></button>
+                                                </div>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                               </div> 
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header_contact">
+                        <a class="c button" href="#">Contact Us</a>
+                        <div class="header_user">
+                            <a class="user" href="#"><i class="far fa-user"></i></a>
+                            <div class="snav_basic page-start">
+                                <ul class="snav_basic_list">
+                                    <li class="snav_basic_item" >
+                                        <a class="snav_basic_link" href="#">Sign in</a>
+                                    </li>
+                                    <li class="snav_basic_item">
+                                        <a class="snav_basic_link" href="#">Create account</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--메인 영역-->
+            <main class="l_main">
+                <section class="t_banner" style="background-image: url('/winery/img/half.png');" > 
+                    <div class="container">
+                        <div class="home_banner_inner">
+                            <h2>Welcome To</h2> <br>
+                            <h2>Winery Tour</h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="t_intro">
+                    <div class="l_container">
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs_list">
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">Home</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">View</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">HALF-TOURS</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br>
+                        <div class="t_grid">
+                            <div>
+                                <h1 class="heading1">Winery Tours</h1>
+                                <div>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                    <br>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                    <br>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                </div>    
+                            </div>
+                        
+                            <div class="li">
+                                <h4 class="heading4">
+                                    What's include on every tour?
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 투어 리스트-->
+                <main class="l_main">
+                    <div nami="i" class="tour_list">
+                        <div class="l_container">
+                            <div class="tl_header">
+                                <h2 class="heading2">Our Adventure Tour</h2>
+                            </div>
+                            <div class="tl_grid">
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/half.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지1 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/full.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지2 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/private.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지3 -->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">Half-Day Tour</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/half.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지1 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/full.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지2 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/private.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지3 -->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">Half-Day Tour</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/half.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지1 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/full.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지2 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/private.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- 슬라이드 이미지3 -->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">Half-Day Tour</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                            </div>        
+                            
+                        </div>
+                    </div>
+                </main>
+
+
+            <!--푸터 영역-->
+            <footer class="footer">
+                <div class="footer_upper">
+                    <div class="container">
+                        <div class="footer_grid">
+                            <div class="footer_brand">
+                                <a  aria-current="page" class="headerlogo" href="#"><span><img src="/winery/img/logo-02.svg" alt="로고"></span></a>
+                                <address class="footer_contact">
+                                    <dl>
+                                        <div>
+                                            <dt>Call</dt>
+                                            <dd>
+                                                <a href="#">+82 000-0000-0000</a>
+                                            </dd>
+                                        </div>
+                                        <div>
+                                            <dt>Email</dt>
+                                            <dd>
+                                                <a href="#">info@gmail.com</a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                    <p>
+                                        Malborough, New Zealand <br>
+                                        Malborough, New Zealand <br>
+                                        Malborough, New Zealand
+                                    </p>
+                                </address>
+                            </div>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer_nav" role="navigation">
+                                <span class="footer_nav_title">Winery Tour Types</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winery Tour</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <button type="button" class="footer_scroll">
+                            <span>Top</span>
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+   
+        // 헤더 스크롤
+     $(function(){
+     
+     var $header = $('.header');
+     $(window).scroll(function(){
+     if($(this).scrollTop() > 0){
+         $header.addClass('sticky');
+     }else{
+         $header.removeClass('sticky');
+     }
+     });
+     
+     
+     
+     // 슬릭슬라이드
+     
+     $('.swiper_wrapper').slick({
+       slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
+       infinite : true, 	//무한 반복 옵션	 
+       slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
+       slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
+       arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
+       dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
+       autoplay : false,			// 자동 스크롤 사용 여부
+       draggable : true, 	//드래그 가능 여부 
+     
+     });
+     
+     
+     });
+     
+     
+     
+         </script>
+
+
+</body>
+</html>

@@ -12,10 +12,235 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/list.css" />
+
+    
  
     <style>
-    
+        section > nav {
+            width: 100%;
+            height: 36px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000;
+            box-sizing: border-box;
+        }
+        section > nav > h1 {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.5em;
+            font-family: 'Noto Sans KR', '고딕', sans-serif;;
+            padding: 0 0 7px;
+            line-height: 1em;
+        }
+        section > nav > p {
+            float: right;
+            margin-top: 10px;
+        }
+        section > nav > p > strong {font-weight: bold;}
+
+        #search > .detail_search {
+            width: 100%;
+            margin: 16px 0 0 ;
+            border: 1px solid #d7d7d7;
+        }
+
+        #search > .detail_search > h3 {
+            border-bottom: 1px solid #d7d7d7;
+            color: #111;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 30px;
+            padding: 10px 15px;
+        }
+        #search > .detail_search > h3 > strong {
+            color: #d50c0d;
+            font-size: 18px;
+            margin-right: 6px;
+            font-weight: bold;
+        }
+        #search > .detail_search > h3 > em {
+            color: #888;
+            font-size: 14px;
+        }
+        #search > .detail_search > h3 span {
+            color: #d50c0d;
+        }
+        #search > .detail_search > form {
+            border-bottom: 1px solid #d7d7d7;
+            padding: 10px 15px;
+        }
+        #search > .detail_search > form > input[type=text] {
+            height: 30px;
+            border: 1px solid #bbb;
+            padding: 0 10px;
+        }
+        #search > .detail_search > form > input[type=submit] {
+            height: 32px;
+            padding: 0 5px;
+            font-weight: bold;
+            background: #d50c0c;
+            color: #fff;
+            border: 0;
+        }
+        #search > .detail_search > form > span {
+            float: right;
+            margin-top: 0;
+        }
+        #search > .detail_search > form > span > label {
+            margin-right: 10px;
+        }
+        #search > .detail_search > form > span > input {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #bbb;
+            padding: 0 10px;
+        }
+
+        #search > .detail_search > .info {
+            padding: 15px;
+            background: #f5f5f5;
+            color: #737373;
+        }
+        #search > .sort {
+            margin: 0 0 20px 0;
+            border-bottom: 1px solid #dfdfdf;
+            overflow: hidden;
+        }
+        #search > .sort > li {
+            float: left;
+            position: relative;
+            padding: 15px 0;
+            line-height: 15px;
+        }
+        #search > .sort > li > a {
+            display: block;
+            padding: 0 10px;
+            border-right: 1px solid #ddd;
+        }
+
+        main > section > section {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        main > section > section > article {
+            width: 100%;
+            height: 200px;
+            border-bottom: 1px solid #ececec;
+        }
+        main > section > section > article > ul {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        main > section > section > article > ul > li {
+            position: relative;
+            float: left;
+            height: 100%;
+            padding: 30px 10px;
+            box-sizing: border-box;
+        }
+
+
+        main > section > section > article > ul > li:nth-child(1){
+            width: 20%;
+            padding: 0;
+        }
+        main > section > section > article > ul > li:nth-child(2) {
+            width: 40%;
+        }
+        main > section > section > article > ul > li:nth-child(3) {
+            width: 20%;
+        }
+
+        main > section > section > article .thumb {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        main > section > section > article .thumb > img {
+            width: 100%;
+        }
+        main > section > section > article .name {
+            font-size: 16px;
+            font-family:'Malgun Gothic', '고딕', sans-serif;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        main > section > section > article .desc > a {
+            font-size: 12px;
+            font-family: '굴림';
+            color: rgb(51, 51, 51);
+        }
+
+        main > section > section > article .desc {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+        }
+        main >section > section > article .desc > a {
+            font-size: 12px;
+            font-family: 굴림;
+            color: rgb(51,51,51);
+            text-decoration: none;
+        }
+
+        main > section > section > article .desc > a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+
+        main > section > section > article .dis_price > ins {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        main > section > section > article .org_price > span{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 10px;
+        }
+        main >section > section > article span.freeshipping {
+            display: inline-block;
+            font-size: 0;
+            vertical-align: text-bottom;
+            width: 55px;
+            height: 13px;
+            background: url(../img/ico_freeshipping.gif) no-repeat;
+            margin-top: 4px;
+        }
+        main > section > section > article .seller {
+            color: #444;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .badgepower {
+            background-image: url(../img/ico_power_dealer.gif);
+            font-size: 0;
+            width: 80px;
+            height: 19px;
+            background-repeat: no-repeat;
+        }
+        h6.rating {
+            width: 50px;
+            font-size: 11px;
+            background-image: url(../img/rating_star.png);
+            background-repeat: no-repeat;
+            background-position: 36px 0;
+            background-size: auto 100%;
+            display: block;
+            position: absolute;
+            left: 10px;
+            bottom: 30px;
+        }
+        h6.rating.star2 {
+            width: 64px;
+        }
+        h6.rating.star4 {
+            width: 91px;
+        }
+
 
     </style>
   <script>
@@ -233,20 +458,57 @@
 
             
             <!--section에 식별값-->
-            <section id="list">
+            <section id="search">
                <!-- 제목, 페이지 네비게이션-->
                 <nav>
-                    <h1>남성의류 상품리스트</h1>
+                    <h1>상품 검색 결과</h1>
                     <p>
                         HOME >
-                        <span>패션·의류·뷰티</span>
+                        <span>상품검색</span>
                         >
-                        <strong>남성의류</strong>
+                        <strong>검색키워드</strong>
 
                     </p>
                 </nav>
-               
-                <!-- 정렬방식 링크-->    
+                <div class="detail_search">
+                    <h3>
+                        <strong>셔츠</strong>
+                        검색결과
+                        <em>
+                            (총&nbsp;:&nbsp;
+                            <span>20</span>
+                            &nbsp;건)
+                        </em>
+                    </h3>
+                    <form action="#">
+                        <input type="text" name="search">
+                        <input type="submit" value="검색">
+                        <span>
+                            <label>
+                                <input type="checkbox" name="chk" value="상품명">
+                                상품명
+                            </label>
+                            <label>
+                                <input type="checkbox" name="chk" value="상품설명">
+                                상품설명
+                            </label>
+                            <label>
+                                <input type="checkbox" name="chk" value="상품가격">
+                                상품가격
+                            </label>
+                            <input type="text" name="min">
+                            원&nbsp;~&nbsp;
+                            <input type="text" name="max">
+                            원
+                        </span>
+                    </form>
+                    <p class="info">
+                        상세검색을 선택하지 않거나, 상품가격을 입력하지 않으면 전체에서 검색합니다. <br />
+                        
+                        검색어는 최대 30글자까지, 여러개의 검색어를 공백으로 구분하여 입력 할수 있습니다.
+                    </p>
+                </div>
+                <!-- 정렬방식 링크-->  
                 <ul class="sort">
                     <li><a href="#">판매많은순</a></li>
                     <li><a href="#">낮은가격순</a></li>
@@ -292,7 +554,7 @@
                                     &nbsp;블루포스
                                 </h4>
                                 <h5 class="badgepower">판매자등급</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star1">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -329,7 +591,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star2">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -366,7 +628,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star3">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -403,7 +665,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star4">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -440,7 +702,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star5">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -477,7 +739,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star6">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -514,7 +776,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star7">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -551,7 +813,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star8">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -588,7 +850,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star9">상품평</h6>
                             </li>
                         </ul>
                     </article>
@@ -625,7 +887,7 @@
                                     &nbsp;판매자상점명
                                 </h4>
                                 <h5 class="badgepower">고객만족우수</h5>
-                                <h6 class="ratingstar1">상품평</h6>
+                                <h6 class="rating star1">상품평</h6>
                             </li>
                         </ul>
                     </article>

@@ -1,0 +1,254 @@
+
+    main >  #order > nav {
+        width: 100%;
+        height: 36px;
+        border-bottom: 1px solid #000;
+        box-sizing: border-box;
+        }
+        main >  #order > nav > h1 {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.5em;
+            padding: 0 0 7px;
+            line-height: 1em;
+        }
+    
+        main >  #order > nav > p {
+            float: right;
+            margin-top: 10px;
+        }
+    
+        main > section > section {
+            width: 100%;
+            box-sizing: border-box;
+        }
+       
+        main > #order .product > table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-top: 2px solid #000;
+            margin-top: 20px;
+        }
+        main > #order .product > table td{
+            text-align: center;
+        }
+        
+    
+        main > #order .product > table tr {
+            border-bottom: 1px solid #d3d3d3;
+        }
+    
+        main > #order .product > table th {
+            padding: 12px 0;
+            background: #fff;
+            color: #383838;
+            font-size: 0.95em;
+            text-align: center;
+            letter-spacing: -0.1em;
+        }
+        main > #order .product > table .empty {
+            display: none;
+        }
+        main > #order .product > table td:last-child{
+            color: #ff006c;
+            font-weight: bold;
+        }
+        main > #order .product > table .empty td {
+            padding: 50px 0 !important;
+            text-align: center;
+            color: #777 !important;
+        }
+    
+        main > #order .product > table td > article {
+            overflow: hidden;
+        }
+        main > #order .product > table td > article > a {
+            float: left;
+            display: inline-block;
+        }
+        main > #order .product > table article img {
+            width: 80px;
+        }
+        main > #order .product > table td > article > div{
+            float: left;
+            margin-top: 10px;
+        }
+        main > #order .product > table td > article > div a {
+            font-size: 15px;
+            font-family: 'Malgun Gothic', '돋움', sans-serif;
+        }
+        main > #order .product > table td > article > div p {
+            text-align: left;
+            color:#777;
+            margin-top: 4px;
+        }
+    
+        main > #order form section > article > h1 {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px 0;
+            border-bottom:1px solid #111;
+        }
+    
+        main > #order form section > article > div {
+            padding: 6px;
+            box-sizing:border-box;
+        }
+        main > #order .delivery > div > label {
+            display: block;
+            padding: 4px 0;
+        }
+        main > #order .delivery > .user span {
+            margin-left: 10px;
+            color: #888;
+        }
+        main > #order .delivery > .address input[type=button]{
+            padding: 4px 6px;
+            border: 1px solid #ccc;
+            background-color: #f0f4f9;
+            border-color:#acc0e0;
+            color: #3371c9;
+            outline: none;
+        }
+        main > #order .delivery > .address input.addr{
+            width: 400px;
+        }
+    
+    
+        main > #order form section input {
+            color: #555;
+            font-weight: bold;
+            outline: none;
+            padding: 2px 0;
+        }
+        main > #order form section > article {
+            width: 560px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        main > #order form section > article > div{
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        main > #order .discount > div {
+            overflow: hidden;
+        }
+        main > #order .discount > div > p {
+            float: left;
+        }
+        main > #order .discount > div > span {
+            display: block;
+            margin-top: 20px;
+            color: #888;
+        }
+        main > #order .discount > div > label {
+            float: right;
+        }
+        main > #order .discount > div > label > input[type=text]{
+            display: inline-block;
+            outline: none;
+        }
+        main > #order .discount > div > label > input[type=button]{
+            padding: 4px 6px;
+            border: 1px solid #ccc;
+            background-color: #f0f4f9;
+            border-color:#acc0e0;
+            color: #3371c9;
+            outline: none;
+        }
+    
+        main > #order .payment > div {
+            margin-bottom: 10px;
+        }
+        main > #order .payment > div > span{
+            display: inline-block;
+            color: #3a85c8;
+            margin: 6px 0;
+        }
+        main > #order .payment > div label {
+            margin-right: 16px;
+        }
+        main > #order .payment > div input {
+            vertical-align: bottom;
+            margin-right: 4px;
+    
+        }
+        main > #order form section > .alert {
+            width: 560px;
+            background-color: #f7f7f7;
+            padding: 6px;
+            padding-left: 20px;
+            color: #999;
+            box-sizing: border-box;
+        }
+        main > #order form section > .alert > ul {
+            list-style: inherit;
+        }
+        main > #order form section > .alert > ul > li {
+            line-height: 20px;
+        }
+        main > #order form section > .alert > ul > li > span {
+            position: relative;
+            left: -6px;
+        }
+    
+        main > #order form section {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    
+        main > #order .info {
+            position: absolute;
+            right: 0;
+            top: 26px;
+            width: 360px;
+            height: 412px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #d3d3d3;
+            box-sizing: border-box;
+            }
+        main > #order .info > h2 {
+            width: 100%;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #111;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            color: #1e1e1e;
+        }
+        main > #order .info  > table {
+            width: 100%;
+        }
+        main > #order .info * {
+            font-weight: bold;
+        }
+        main > #order .info > table td {
+            padding: 10px 0;
+            font-size: 14px;
+            color: #555;
+        }
+    
+        main > #order .info > table td:last-child{
+            text-align: right;
+        }
+        main > #order .info > input[type=button]{
+            width: 100%;
+            height: 56px;
+            font-size: 26px;
+            border-width: 1px;
+            border-color: #d81818;
+            border-bottom-color: #9e1212;
+            background: #ed2f2f;
+            background-image: -webkit-linear-gradient(#ed2f2f, #dd0e0e);
+            color: #fff;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+    
+    
+    
