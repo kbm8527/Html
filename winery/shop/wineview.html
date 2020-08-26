@@ -17,6 +17,11 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
 
+    <!--모달 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 
     <!-- 제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -93,7 +98,7 @@
         }
         .side_box {
             position: sticky;
-            z-index: 1020;
+            z-index: 100;
             box-sizing: border-box;
             display: block;
         }
@@ -136,6 +141,124 @@
         .tc_button {
             text-decoration: none;
             color: #191919;
+        }
+
+        /* 모달 */
+        .m {
+            opacity: 1;
+            overflow: auto;
+            overflow-y: scroll;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            outline: 0;
+            z-index: 1;
+            display: none;
+            
+        }
+        .m_dialog {
+            width: 900px;
+            margin: 30px auto;
+            transform: translate(0,0);
+        }
+        .m_content {
+            border-radius: 0;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.2);
+            background-clip: padding-box;
+            outline: none;
+            height: 400px;
+        }
+        .modal_header {
+            text-align: left;
+            padding: 10px 15px;
+            position: relative;
+            border-bottom: 1px solid #e9e9e9;
+            min-height: 16px;
+        }
+        .row:before,.row:after {
+            content: " ";
+            display: table;
+        }
+        .row:after {
+            clear:both;
+        }
+
+        .m_title {
+            float: left !important;
+            font-weight: normal;
+            padding: 0px;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .m_body {
+            position: relative;
+            display: block;
+           
+        }
+        .cm_left {
+            float: left;
+            padding: 0 !important;
+            padding-bottom: 20px;
+        }
+        .cm_top {
+            padding: 15px 0;
+            width: 400px;
+        }
+        .add_bottle {
+            text-align: center;
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .w_image {
+            display: inline-block;
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+            float: left;
+        }
+        .w_info {
+            padding-left: 0;
+            width: 200px;
+            float: left;
+            position: relative;
+            padding-right: 15px;
+            padding-left: 15px;
+            display: inline-block;
+            
+        }
+        .pro_name {
+            margin-bottom: 10px;
+            line-height: 20px;
+            color: inherit;
+        }
+
+        .r_item {
+            color:#111;
+            
+        }
+        .remove_item {
+            text-decoration: none;
+        }
+        .cm_right {
+            position: relative;
+            float: right;      
+            width: 300px;
+            padding: 45px;
+            border-top:none;
+            border-left:1px solid #e9e9e9;
+        }
+        .close {
+            color: red;
+            
+        }
+        .close:hover, .close:focus {
+            cursor: pointer;
         }
 
     </style>
@@ -359,14 +482,97 @@
                     </div>
                 </div>
             </header>
+
+            <button id="btn" type="button">button</button>
+            
+            <p><a href="#" rel="modal:open"></a></p>
+
+
+            <!-- 모달 -->
+            <div id="modal" class="m cart_modal" style="z-index: 1050; display: block;" aria-hidden="false">
+                <div class="m_dialog">
+                    <div class="m_content">
+                        <div class="modal_header row">
+                            <h4 class="m_title">
+                                Item added to your cart
+                            </h4>
+                            <a href="#" rel="modal:close" class="mo_close" data_dismiss="modal">
+                                <i class="fa fa-items pull-right">d</i>
+                            </a>
+                        </div>
+                        <div class="m_body row">
+                            <div class="cm_left">
+                                <div class="cm_top row">
+                                    <div class="add_bottle">
+                                        <img src="/winery/img/pinkwine.png" alt="pinkwine" class="w_image">
+                                    </div>
+                                    <div class="w_info">
+                                        <h2 class="pro_name">
+                                            <span>Pinor Noir</span>
+                                        </h2>
+                                        <p>
+                                            item code:
+                                            <span>a1111</span>
+                                        </p>
+                                        <p>
+                                            item price:
+                                            <span>123</span>
+                                        </p>
+                                        <p>
+                                            qty:
+                                            <span>1</span>
+                                            <a class="remove_item" href="#">
+                                                <span class="r_item">added by mistake?</span>
+                                                <i class="fa fa-trash-0" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cm_right">
+                                <h2>
+                                    cart summary:
+                                    <span class="items">1 items</span>
+                                </h2>
+                                <p>
+                                    order subtotal:
+                                    <b>
+                                        <span>20,000 원</span>
+                                    </b>
+                                </p>
+                                <a href="#">
+                                    <span>view cart & checkout</span>
+                                </a>
+                                <a href="#">
+                                    <span>
+                                        continue shopping
+                                        <i class="fa fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <span class="close">close</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <span id="open">open</span>
+            
+            
             <!--메인 영역-->
             
+
+
+
+
+
                 <!-- 투어 보기-->
                 <main class="l_main" role="main">
                     <section class="t_banner">
                         <div class="l_container">
                             <div class="tb_inner">
-                                <h2>Half-Day Tour</h2>
+                                <h2>pink wine</h2>
                             </div>
                         </div>
                     </section>
@@ -381,7 +587,7 @@
                                         <a class="breadcrumbs_link" href="#">View</a>
                                     </li>
                                     <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">HALF-TOURS</a>
+                                        <a class="breadcrumbs_link" href="#">wine</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -396,51 +602,43 @@
                                                     <div class="swiper_slide swiper_slide" >
                                                         <a href="#">
                                                             <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img class="halftourimg"src="/winery/img/half.png" alt="Half-Day">
+                                                                <img class="halftourimg"src="/winery/img/pinkwine.png" alt="Half-Day">
                                                             </span>
                                                         </a>
                                                     </div>
-                                                    <!-- 슬라이드 이미지1 -->
-                                                    <div class="swiper_slide swiper_slide-next" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img src="/winery/img/full.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- 슬라이드 이미지2 -->
-                                                    <div class="swiper_slide swiper_slide-next" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img src="/winery/img/private.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- 슬라이드 이미지3 -->
+                                                    
+                                                    
                                                     
                                                 </div>    
                                             </div>
                                         </div>
                                     </div>
                                     
+                                    
+
+
+
+
+
+
                                     <div class="tc_content">
-                                        <h3 class="heading3">Half-Day Tour</h3>
+                                        <h3 class="heading3">pink wine</h3>
                                        
                                             
                                         <div>
                                         <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
+                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
+                                            와인 상세설명
 
                                         </p>
                                         <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
+                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
+                                            와인 상세설명
 
                                         </p>
                                         <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
+                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
+                                            와인 상세설명
 
                                         </p>
                                         
@@ -453,10 +651,10 @@
                                 </div>                                       
                                 <section class="side_box">
                                     <div class="box">
-                                        <h3 class="heading3">Half-Day Tour</h3>
+                                        <h3 class="heading3">pink wine</h3>
                                         <dl>
                                             <div>
-                                                <dt>Days</dt>
+                                                <dt>count</dt>
                                                 <dd>1</dd>
                                             </div>
                                             <div>
@@ -465,8 +663,8 @@
                                             </div>
                                         </dl>
                                         <div class="c_button">
-                                            <button type="button" class="t_button">
-                                                book
+                                            <button type="button" class="t_button" rel="modal:open">
+                                                Add to cart
                                             </button>
                                         </div>
                                         <div class="t_button">
@@ -608,19 +806,6 @@
      
      
      
-     // 슬릭슬라이드
-     
-     $('.swiper_wrapper').slick({
-       slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
-       infinite : true, 	//무한 반복 옵션	 
-       slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
-       slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
-       arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
-       dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
-       autoplay : false,			// 자동 스크롤 사용 여부
-       draggable : true, 	//드래그 가능 여부 
-     
-     });
      $(function(){
             
             var box = $('.tl_grid >.side_box');
@@ -648,6 +833,29 @@
             });
         });
   
+
+        var modal = document.getElementById('modal');
+
+        var btn = document.getElementById('open');
+
+        var span = document.getElementsByClassName('close')[0];
+        
+        
+        btn.onclick = function(){
+            modal.style.display='block';
+        }
+        
+        span.onclick = function() {
+            modal.style.display ='none';
+        }
+
+
+        window.onclink = function(event) {
+            if(event.target == modal){
+                modal.style.display = 'none'
+            }
+        }
+
 
   
 

@@ -24,126 +24,399 @@
     <!-- 슬릭 js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   
+    https://www.laithwaiteswine.co.nz/
+
 
     <link rel="stylesheet" href="/winery/css/index.css">
     
 
-
-
     <style>
         .t_banner {
             position: relative;
-            background: #111 url('/winery/img/t-banner.png') 40% 60%/cover no-repeat;
-            display: block;
+            width: 100%;
+            height: 500px;
+            
+          
+        }
+        .t_intro {
+            padding: 95px 0;
+            background-color: #fff;
+        }
+        .t_intro > .l_container {
+            position: relative;
+
         }
         .l_container {
             width: 100%;
-            margin-left: 170px;
-            padding-left: 150px;
-        
-        }
-
-        .tb_inner {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 300px;
-            padding-top: 50px;
-            text-align: center;
-        }
-        .tb_inner h2 {
-            color: #fff;
-            line-height: 1;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        .t_page {
-            padding: 100px 0 100px;
-            background-color:#f5f6f7 ;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 1200px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
         .breadcrumbs {
-            position: static;
+            position: absolute;
+            top: -75px;
+            left: 15px;
+        }
+        .breadcrumbs_list {
+            padding: 0;
+            margin: 0;
+            
+        }
+        .breadcrumbs_item {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1;
+            text-transform: uppercase;
+            color: #111;
+        }
+        .breadcrumbs_item:not(:last-of-type):after {
+            content: "|";
+            display: inline-block;
+            padding: 0 10px;
+            
+        }
+        .breadcrumbs_item:last-of-type {
+            font-weight: 500;
+        }
+        .breadcrumbs_item:last-of-type .breadcrumbs_link {
+            pointer-events: none;
         }
 
+        .breadcrumbs_link {
+            color: #111;
+            text-decoration: none;
+        }
+
+        .t_intro > .l_container > .t_grid {
+            grid-gap: 100px;
+           
+        }
+        .t_grid {
+            display: grid;
+            grid-template-columns: 1fr repeat(1,1fr);
+           
+        }
+        .li  li {list-style:square;}
+
+        .heading1 {
+            margin: 25px 0 10px;
+        }
+        .heading4 {
+            
+            margin: 45px 0 10px;
+        }
+
+
+
+        /* 와인 리스트 */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .l_main {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 543px);
+            margin-top: 0;
+
+        }
+        .tour_list {
+            padding: 95px 0;
+            background-color: #f5f6f6;
+            margin: 0;
+
+        }
+        .l_container {
+            width: 100%;
+            max-width: 73.75rem;
+            padding-right: .625rem;
+            padding-left:.625rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .tl_header {
+            margin-bottom: 200px;
+            text-align:center;
+        }
 
         .tl_grid {
             display: grid;
-            grid-template-columns: 800px 300px;
-            grid-gap: 100px;
-           
-            
+            grid-template:auto/repeat(3,minmax(0,1fr));
+            grid-gap: 1.25rem;
+            flex-wrap: wrap;
         }
-      
-
-        .tl_grid>* {
+        .tl_grid>*{
+            width: auto;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+        .tcard {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            box-shadow: 0 1px 12px 0 rgba(0,0,0,.05), 0 0 1px 0 rgba(0,0,0,.1);;
+        }
+        .tcard_image {
+            display: flex;
+            background: rgba(0,0,0,.04);
+        }
+        .tcard_image:before {
+            content: "";
+            display: block;
+            float: left;
+            padding-bottom: 60%;
+        }
+        .tcard_image .thumbnail_gallery {
+            width: 100%;
+            padding-bottom: 0;
+        }
+        .tg_wrapper {
+            position: relative;
+        }
+        .tg {
+            position: relative;
+            max-height: 475px;
             overflow: hidden;
         }
 
-
-        .thumbnail_gallery {
-            width:800px ;
-        }
-        .img_wrapper img {
-            width: 800px;
-        }
-        .halftourimg {
-            height: 533px;
-        }
-        .side_box {
-            position: sticky;
-            z-index: 1020;
-            box-sizing: border-box;
-            display: block;
-        }
-        .box {
-            
-            padding: 15px 10px;
-            border: 1px solid #e9e9e9;
-            background-color: #fff;
-        }
-        .box h3 {
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-        .side_box dl {
+        .swiper_wrapper {
+            transform: translateZ(0);
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            margin-bottom: 20px;
+            box-sizing: content-box;
         }
-        .side_box dl > div > dt {
+
+        .swiper_slide {
+            display: flex;
+            background:rgba(0,0,0,.04) ;
+            flex-shrink: 0;
+            height: 100%;
+            position: relative;
+            transition-property: transform, -webkit-transform;;
+        }
+        .swiper_slide:before {
+            content: "";
             display: block;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            color: #191919;
+            float: left;
+            padding-bottom: 61%;
         }
-        .side_box dl > div > dd {
-            display: block;
-            font-size: 15px;
-            color: #111;
+        .swiper_slide a {
+            width: 100%;
+            background-color: transparent;
+            text-decoration: underline;
+            outline-width: thin;
+            outline-color: rgba(224,19,86,.25);
+            color: currentColor;
+            transition: color .2s,background-color .2s;
         }
-      
-        .t_button{
-            font-size: 15px;
-            margin-top: 10px;
-            width: 150px;
-            text-decoration: none;
+        .img_wrapper {
+            width: 100%;
+            height: 100%;
+            filter: blur(0);
+        }
+        .img_wrapper > img {
+            opacity: 1;
+            transition: opacity .3s;
+            position: static;
+            width: 370px;
+            height: 300px;
+            
+        }
+        .swipe_slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        .l_img_wrapper.blur {
+            filter: blur(15px);
+        }
+        .swiper_button-next {
+            right: 0;
+            left: auto;
             text-align: center;
         }
-        .tc_button {
-            text-decoration: none;
-            color: #191919;
+        .swiper_button-prev{
+            left: 0;
+            right: auto;
+            text-align: center;
+
+        }
+        .swiper_button-next ,.swiper_button-prev{
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            background-size: 7px 11px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-color: rgba(0,0,0,.5);
+
+             margin-top: -10px;
+
+
         }
 
+        .tc_content {
+            position: relative;
+            flex-grow: 1;
+            padding: 25px 25px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .heading3 {
+            line-height:1;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .tc_price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 15px;
+            line-height:1;
+            text-transform: uppercase;
+            color: #111;
+        }
+        .tc_price span {
+            font-size: 14px;
+            color: #222;
+            padding: 0 7px;
+        }
+        .tc_description {
+            padding-right: 90px;
+            line-height:1.5;
+            margin-bottom: 15px;
+        }
+        .t_button {
+            align-self: flex-start;
+            margin-top: auto;
+            color: #111;
+            background-color: transparent;
+            height: 35px;
+            padding: 5px 20px;
+            appearance: none;
+            position: relative;
+            align-items: center;
+            width: auto;
+            justify-content: center;
+            border: 1px solid tomato;
+            border-radius: 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            opacity: 1;
+            visibility: visible;
+            text-decoration: none;
+
+        }
+        .t_button:hover {
+            color: #fff;
+            border-color: tomato;
+            background-color: tomato;
+        }
+/* ------------------------------------------슬릭슬라이드 버튼부분-------------------------------------------- */
+
+/* 버튼 초기화*/
+button {
+    border: 0;
+}
+
+
+/* 슬릭슬라이드 버튼 */
+
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,.6);
+    color: aliceblue;
+    display: inline-block;
+    text-indent: -9999px;
+    font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+
+
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,.6);
+    color: aliceblue;
+    display: inline-block;
+    text-indent: -9999px;
+
+    font: normal normal normal 14px/1 FontAwesome; 
+}
+
+
+.slick-prev {
+    left: 0;
+} 
+
+.slick-next{
+    right: 0;
+  
+}
+/* 슬릭슬라이더 화살표는 슬릭안에 있는 CSS를 이용하기 때문에 슬릭버튼을 변경해줘야해 */
+.slick-prev::before{
+    content: "\f053";
+    color: aliceblue;
+    font-size: 15px;
+
+    position: absolute;
+    top: 50%; left: 15px;
+    transform: translateY(-50%);
+    text-indent: 0;
+}
+
+ 
+.slick-next::before{
+  
+    content: "\f054";
+    color: aliceblue;
+    font-size: 15px;
+
+    position: absolute;
+    top: 50%; right: 15px;
+    transform: translateY(-50%);
+    text-indent: 0;
+    
+}
+
+
+
+
+
+
+
     </style>
-    <script>
 
 
-
-    </script>
+    </style>
+    
     
 </head>
 <body>
@@ -360,127 +633,241 @@
                 </div>
             </header>
             <!--메인 영역-->
-            
-                <!-- 투어 보기-->
-                <main class="l_main" role="main">
-                    <section class="t_banner">
-                        <div class="l_container">
-                            <div class="tb_inner">
-                                <h2>Half-Day Tour</h2>
-                            </div>
+            <main class="l_main">
+                <section class="t_banner" style="background-image: url('/winery/img/wine_glass.png');" > 
+                    <div class="container">
+                        <div class="home_banner_inner">
+                            <h2></h2> <br>
+                            <h2></h2>
                         </div>
-                    </section>
-                    <div class="t_page">
-                        <div class="l_container">
-                            <nav class="breadcrumbs">
-                                <ul class="breadcrumbs_list">
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">Home</a>
-                                    </li>
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">View</a>
-                                    </li>
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">HALF-TOURS</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <br>
-                            <div class="tl_grid">
-                                <div>                                    
-                                    <div class="thumbnail_gallery">
-                                        <div class="tg_wrapper">
-                                            <div class="tg swiper">
-                                                <div class="swiper_wrapper">
+                    </div>
+                </section>
+                <section class="t_intro">
+                    <div class="l_container">
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs_list">
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">Home</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">View</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">wine</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br>
+                        <div class="t_grid">
+                            <div>
+                                <h1 class="heading1">wine</h1>
+                                <div>
+                                  <p>
+                                    Sauvignon Blanc is the flagship varietal of New Zealand, and is typically a very crisp aromatic wine with notes of grapefruit, tropical fruit and cut grass.
 
-                                                    <div class="swiper_slide swiper_slide" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img class="halftourimg"src="/winery/img/half.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- 슬라이드 이미지1 -->
-                                                    <div class="swiper_slide swiper_slide-next" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img src="/winery/img/full.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- 슬라이드 이미지2 -->
-                                                    <div class="swiper_slide swiper_slide-next" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img src="/winery/img/private.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- 슬라이드 이미지3 -->
-                                                    
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </div>
+                                    The much-lauded white wines of New Zealand tend to be slightly sweeter than those from Bordeaux and the Loire Valley, and are hugely influenced by the growing conditions of the country.
                                     
-                                    <div class="tc_content">
-                                        <h3 class="heading3">Half-Day Tour</h3>
-                                       
-                                            
-                                        <div>
-                                        <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
+                                    The grape originates from Bordeaux, where it is also known as Pouilly-Fumé, Sancerre, and Graves, and is one of the world's most widely planted grapes.
+                                    
+                                    Marlborough is the most revered wine-producing region in the small country, accounting for 62% of all wine produced in New Zealand.
+                                    
+                                    The New Zealand Sauvignon Blanc scene started popping in 1970s, with the high quality Sauvignon Blancs coming out of Marlborough illustrating the great potential for grape growing in New Zealand.
+                                    
+                                    Sauvignon Blanc tends to be fermented in stainless steel vats, which results in a clean, crisp flavor, and will not show any of that butteriness that is often prevalent in well-oaked Chardonnay for instance.
+                                    
+                                    When it comes to pairing, think white meat, shellfish, and try to accentuate the herbaceous qualities of the wine with ingredients like parsley and cilantro.
+                                  </p>
+                                </div>    
+                            </div>
+                        
+                            <div class="li">
+                                <h4 class="heading4">
+                                    wine
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 투어 리스트-->
+                <main class="l_main">
+                    <div nami="i" class="tour_list">
+                        <div class="l_container">
+                            <div class="tl_header">
+                                <h2 class="heading2">Our wine</h2>
+                            </div>
+                            <div class="tl_grid">
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
 
-                                        </p>
-                                        <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
-
-                                        </p>
-                                        <p class="tc_description">
-                                            Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
-                                            투어 상세설명
-
-                                        </p>
-                                        
-                                        </div>
-                                
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/pinkwine.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                   
                                                     
-                                    </div>
-                                
-                                  
-                                </div>                                       
-                                <section class="side_box">
-                                    <div class="box">
-                                        <h3 class="heading3">Half-Day Tour</h3>
-                                        <dl>
-                                            <div>
-                                                <dt>Days</dt>
-                                                <dd>1</dd>
+                                                    </div>    
+                                                </div>
                                             </div>
-                                            <div>
-                                                <dt>Price</dt>
-                                                <dd>50,000</dd>
-                                            </div>
-                                        </dl>
-                                        <div class="c_button">
-                                            <button type="button" class="t_button">
-                                                book
-                                            </button>
-                                        </div>
-                                        <div class="t_button">
-                                            <a class="tc_button" href="#">Contact us</a>
                                         </div>
                                     </div>
 
 
-                                </section>
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
 
                                 
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/cabernet.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                
+                                                    
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
-                            </div>            
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 370px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/champagne.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        
+                                                ->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">wine</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating Māori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View wine</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                           
+                            </div>        
+                            
                         </div>
                     </div>
                 </main>
@@ -608,55 +995,13 @@
      
      
      
-     // 슬릭슬라이드
-     
-     $('.swiper_wrapper').slick({
-       slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
-       infinite : true, 	//무한 반복 옵션	 
-       slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
-       slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
-       arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
-       dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
-       autoplay : false,			// 자동 스크롤 사용 여부
-       draggable : true, 	//드래그 가능 여부 
-     
-     });
-     $(function(){
-            
-            var box = $('.tl_grid >.side_box');
-
-            $(window).scroll(function(){
-                
-                var t = $(this).scrollTop();
-
-        
-                if(t > 330 ){
-                    box.css({
-                        'position':'fixed',
-                         'top':'109px'  
-                          
-                          
-                             
-                        })
-                  
-                }else{
-                    box.css({'position':'static'
-                    
-                    
-                    })
-                }
-            });
-        });
   
-
-  
-
-
+     
      });
      
      
      
-    </script>
+         </script>
 
 
 </body>
