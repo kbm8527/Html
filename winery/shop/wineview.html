@@ -97,8 +97,7 @@
             height: 533px;
         }
         .side_box {
-            position: sticky;
-            z-index: 100;
+            z-index: 1050;
             box-sizing: border-box;
             display: block;
         }
@@ -145,7 +144,7 @@
 
         /* 모달 */
         .m {
-            opacity: 1;
+            opacity: 0;
             overflow: auto;
             overflow-y: scroll;
             position: fixed;
@@ -483,12 +482,9 @@
                 </div>
             </header>
 
-            <button id="btn" type="button">button</button>
-            
-            <p><a href="#" rel="modal:open"></a></p>
+<!--
+            모달
 
-
-            <!-- 모달 -->
             <div id="modal" class="m cart_modal" style="z-index: 1050; display: block;" aria-hidden="false">
                 <div class="m_dialog">
                     <div class="m_content">
@@ -556,8 +552,9 @@
                     </div>
                 </div>
             </div>
+-->
             
-            <span id="open">open</span>
+            
             
             
             <!--메인 영역-->
@@ -808,7 +805,7 @@
      
      $(function(){
             
-            var box = $('.tl_grid >.side_box');
+            var box = $('.box');
 
             $(window).scroll(function(){
                 
@@ -818,10 +815,9 @@
                 if(t > 330 ){
                     box.css({
                         'position':'fixed',
-                         'top':'109px'  
-                          
-                          
-                             
+                         'top':'109px',
+                         'width':'300px'  
+                                 
                         })
                   
                 }else{
@@ -833,36 +829,9 @@
             });
         });
   
-
-        var modal = document.getElementById('modal');
-
-        var btn = document.getElementById('open');
-
-        var span = document.getElementsByClassName('close')[0];
-        
-        
-        btn.onclick = function(){
-            modal.style.display='block';
-        }
-        
-        span.onclick = function() {
-            modal.style.display ='none';
-        }
-
-
-        window.onclink = function(event) {
-            if(event.target == modal){
-                modal.style.display = 'none'
-            }
-        }
-
-
-  
-
-
      });
-     
-     
+    
+
      
     </script>
 
