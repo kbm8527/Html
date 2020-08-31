@@ -66,11 +66,101 @@
         .o_grid p {
             margin: 12px 0 0;
         }
-    .con {
+         .con {
         display: inline-block;
-    }
+        width: 400px;
+        
+
+        }
+
+        .form_g, .f_label .form_con {
+            display:block;
+           
+        }
+        .form_g {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .form_g input {
+            height: 32px;
+        }
+
+        .form_g:nth-child(1){
+            float: right;
+            margin-right: 60px;
+        }
+      
+        .form_con:nth-child(2) {
+            width: 150px;
+        }
+        .form_g:nth-of-type(3) input {
+            width: 340px;
+        }
+        .form_g:nth-of-type(4) input {
+            width: 340px;
+        }
+        .form_g:nth-of-type(5) input {
+            width: 340px;
+        }
+        .form_g:nth-of-type(6) input {
+            width: 340px;
+        }
+        .form_g:nth-of-type(7) input {
+            width: 340px;
+        }
+        .form_g:nth-of-type(8) input {
+            width: 340px;
+        }
+
+
+        .form_con {
+            margin-top: 10px;
+            width: 80px;
+        }
+
+        .t_button {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .box {
+            border: 1px solid #dddddd !important;
+            width: 300px;
+            margin-top: 20px;
     
-       
+        }
+        .heading3 {
+            height: 50px;
+            background: #f5f5f5;
+            padding: 5px 15px;
+            padding-top: 10px;
+            letter-spacing: 0.2rem;
+            line-height: normal;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-bottom: 1px solid #dddddd;
+        }
+        .o_table {
+            width: 100%;
+        }
+        .o_table tr {
+           margin: 5px 0;
+        }
+        .o_table tr td {
+            padding: 6px 10px;
+            font-size: 16px;
+        }
+        .o_table tr td:nth-child(2) {
+            text-align: right;
+        }
+        
+        .o_price td {
+            border-top: 1px dotted #ccc;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+
 
     </style>
    
@@ -200,6 +290,9 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
+                                            </li>
+
+                                            <li class="snav_item" style="background-color: darkcyan;">   
                                                 <div class="nav_main">
                                                     <a class="snav_link" href="#">
                                                         <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
@@ -210,10 +303,7 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
-                                                <div class="tsnav">
-                                                 
-
-                                                </div>
+                                               
                                             </li>
                                         </ul>
                                     </div>
@@ -252,7 +342,8 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
-                                                
+                                            </li>
+                                            <li class="snav_item" style="background-color:darkcyan;">   
                                                 <div class="nav_main">
                                                     <a class="snav_link" href="#">
                                                         <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
@@ -381,17 +472,22 @@
                                 
                                 <section class="side_box">
                                     <div class="box">
+                                        
                                         <h3 class="heading3">Order Summary</h3>
-                                        <dl>
-                                            <div>
-                                                <dt>Wine Subtotal</dt>
-                                                <dd>1</dd>
-                                            </div>
-                                            <div>
-                                                <dt>Price</dt>
-                                                <dd>50,000</dd>
-                                            </div>
-                                        </dl>
+                                       
+                                        <table class="o_table">
+                                          <tr class="o_count">
+                                              <td>Wine Subtotal</td>
+                                              <td>1</td>
+                                          </tr>
+                                          <tr class="o_tax">
+                                              <td>All prices are inclusive of GST</td>
+                                          </tr>
+                                          <tr class="o_price">
+                                              <td>Order Total</td>
+                                              <td>$100</td>
+                                          </tr>
+                                        </table>
                                         
                                        
                                     </div>
