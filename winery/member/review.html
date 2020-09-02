@@ -13,272 +13,199 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
     
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-
-    <!--모달 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
-
     <!-- 제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- 슬릭 js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  
+    <script type="text/jsvascript" src="/winery/js/function.js"></script>
 
+    
+    
+    
+    
     <link rel="stylesheet" href="/winery/css/index.css">
     
 
 
-
     <style>
-        .t_banner {
-            position: relative;
-            background: #111 url('/winery/img/t-banner.png') 40% 60%/cover no-repeat;
-            display: block;
-        }
-        .l_container {
+        .banner {
+            background: #eee 50% 50%/cover no-repeat;
+            background-image: url('/winery/img/reviewbanner.png') ;
             width: 100%;
-            margin-left: 170px;
-            padding-left: 150px;
-        
+            height: 600px;            
         }
-
-        .tb_inner {
+        
+        .c_banner_inner {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 300px;
-            padding-top: 50px;
+            
+            height: 600px;
+            min-height: 400px;
+            max-height: 590px;
             text-align: center;
         }
-        .tb_inner h2 {
+        .c_heading {
             color: #fff;
-            line-height: 1;
+            letter-spacing: .3rem;
+            line-height: normal;
             text-transform: uppercase;
-            font-weight: 700;
-        }
-        .t_page {
-            padding: 100px 0 100px;
-            background-color:#f5f6f7 ;
-        }
-        .breadcrumbs {
-            position: static;
+            font-weight: bold;
+            font-size: 40px;
         }
 
-
-        .tl_grid {
-            display: grid;
-            grid-template-columns: 800px 300px;
-            grid-gap: 100px;
-           
-            
-        }
-      
-
-        .tl_grid>* {
-            overflow: hidden;
-        }
-
-
-        .thumbnail_gallery {
-            width:800px ;
-        }
-        .img_wrapper img {
-            width: 800px;
-        }
-        .halftourimg {
-            height: 533px;
-        }
-        .side_box {
-            /*z-index: 30;*/
-            box-sizing: border-box;
-            display: block;
-        }
-        .box {
-            
-            padding: 15px 10px;
-            border: 1px solid #e9e9e9;
-            background-color: #fff;
-        }
-        .box h3 {
-            line-height: 1;
-            margin-bottom: 20px;
-        }
-        .side_box dl {
+        .page_nav {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            margin-bottom: 20px;
-        }
-        .side_box dl > div > dt {
-            display: block;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            color: #191919;
-        }
-        .side_box dl > div > dd {
-            display: block;
-            font-size: 15px;
-            color: #111;
-        }
-      
-        .t_button{
-            font-size: 15px;
-            margin-top: 10px;
-            width: 150px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .tc_button {
-            text-decoration: none;
-            color: #191919;
-        }
-
-        /* 모달 */
-    
-
-        .m {
-            
-            overflow: auto;
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            outline: 0;
-            z-index: 30;
-            display: none;
-            display: block;
-        }
-        .m_dialog {
-            
-            width: 900px;
-            margin: 30px auto;
-            transform: translate(0,0);
-            display: block;
-        }
-        .m_content {
-           
-            border-radius: 0;
-            position: relative;
-            background-color: #fff;
-            border: 1px solid rgba(0,0,0,0.2);
-            background-clip: padding-box;
-            outline: none;
-            height: 400px;
-           
-        }
-
-    
-
-        .modal_header {
-            text-align: left;
-            padding: 10px 15px;
-            position: relative;
-            border-bottom: 1px solid #e9e9e9;
-            min-height: 16px;
-        }
-        .row:before,.row:after {
-            content: " ";
-            display: table;
-        }
-        .row:after {
-            clear:both;
-        }
-
-        .m_title {
-            float: left !important;
-            font-weight: normal;
-            padding: 0px;
-            margin: 0;
-            line-height: 1.5;
-        }
-        .m_body {
-            position: relative;
-            display: block;
-           
-        }
-        .cm_left {
-            float: left;
-            padding: 0 !important;
+            justify-content: center;
+            background-color: #f5f6f7;
+            padding-top: 20px;
             padding-bottom: 20px;
         }
-        .cm_top {
-            padding: 15px 0;
-            width: 400px;
-        }
-        .add_bottle {
-            text-align: center;
-            position: relative;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        .w_image {
-            display: inline-block;
-            width: 200px;
-            max-width: 100%;
-            height: auto;
-            vertical-align: middle;
-            float: left;
-        }
-        .w_info {
-            padding-left: 0;
-            width: 200px;
-            float: left;
-            position: relative;
-            padding-right: 15px;
-            padding-left: 15px;
-            display: inline-block;
-            
-        }
-        .pro_name {
-            margin-bottom: 10px;
-            line-height: 20px;
-            color: inherit;
-        }
-
-        .r_item {
-            color:#111;
-            
-        }
-        .remove_item {
-            text-decoration: none;
-        }
-        .cm_right {
-            position: relative;
-            float: right;      
-            width: 300px;
-            padding: 45px;
-            border-top:none;
-            border-left:1px solid #e9e9e9;
-        }
-        .close {
-           
-            
-        }
-        .close:hover, .close:focus {
-            cursor: pointer;
-        }
-
-        .modal::before {
+        .page_nav form {
             display: none;
+            width: 100%;
         }
+        .form_control {
+            display: inline-block;
+            width: 100%;
+            height: 48px;
+            padding: 0 15px;
+            border: 1px solid #c2c4c6;
+            border-radius: 0;
+            font-size: 14px;
+            letter-spacing: 1;
+            appearance: none;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .page_nav ul {
+            display: flex;
+            width: 100%;
+            max-width: 200px;
+            justify-content: space-between;
+            list-style: none;
+        }
+        .page_nav ul a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 60px;
+            font-weight: 700;
+            padding: 20px;
+            opacity: .6;
+            transition: transform .2s, opacity .2s, -webkit-transform .2s;
+            will-change: transform;
+        }
+        .page_nav ul a:hover {
+            transform: scale(1.04);
+            opacity: 1;
+            color:darkslateblue;
+        }
+
+        .c_small {
+            text-align: center;
+        }
+        .heading1 {
+            font-size: 40px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            line-height: normal;
+            font-weight: 700;
+        }
+        .reviews {
+            display: block;
+        }
+        .r_list {
+            padding: 0 0 15px;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+        .h_box {
+            background-color: dimgray;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .rl_header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 25px;
+
+        }
+
+        .h_sub {
+            font-size: 20px;
+            font-weight: 600;
+            
+        }
+
+        .rl_filter {
+            margin-bottom: 20px;
+        }
+        .rl_grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(auto,270px));
+            grid-gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .f_label {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+        }
+        .f_control {
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            border: 1px solid #c2c4c6;
+            border-radius: 0;
+            font-size: 17px;
+            color: #4a4d54;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .r_section {
+            padding: 25px;
+            margin: 10px;
+            background-color: #f5f6f6;
+        }
+        .heading4 {
+            font-size: 20px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            line-height: normal;
+            font-weight: 700;
+        }
+
+        .author_title {
+            padding-top: 10px;
+        }
+        
+        .moretext {
+            padding: 10px;
+        }
+
 
 
     </style>
-    <script>
-
-
-
-    </script>
+   
     
 </head>
 <body>
@@ -494,213 +421,200 @@
                     </div>
                 </div>
             </header>
-
-
-
-            <div id="modal" class="m cart_modal" style="display: block;" aria-hidden="true" >
-                <div class="m_dialog">
-                    <div class="m_content">
-                        <div class="modal_header row">
-                            <h4 class="m_title">
-                                Item added to your cart
-                            </h4>
-                            <a href="#" rel="modal:close" class="mo_close close" data_dismiss="modal">
-                                <i class="fa fa-items pull-right">x</i>
-                            </a>
+            <!--메인 영역-->
+            <main class="l_main" role="main">
+                <section class="banner">
+                    <div class="l_container">
+                        <div class="c_banner_inner">
+                            <h1 class="c_heading">Reviews</h1>
                         </div>
-                        <div class="m_body row">
-                            <div class="cm_left">
-                                <div class="cm_top row">
-                                    <div class="add_bottle">
-                                        <img src="/winery/img/pinkwine.png" alt="pinkwine" class="w_image">
+                    </div>
+                </section>
+                <nav class="page_nav">
+                    <form action="#">
+                        <select name="page" id="Page" class="form_control">
+                            <option value="contact.html">about us</option>
+                            <option value="/about us/about us">about us</option>
+                            <option value="/about us/about us">about us</option>
+                            <option value="/about us/about us">about us</option>
+                        </select>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="contact.html"><i class="fas fa-mobile-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><i class="fas fa-mobile-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><i class="fas fa-mobile-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><i class="fas fa-mobile-alt"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <section class="t_intro">
+                    <div class="l_container">
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs_list">
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">Home</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">View</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">wine</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="l_container c_small">
+                        <h1 class="heading1">Latest Reviews</h1>
+                        <p>
+                            We’re proud of the awards we’ve won as New Zealand’s leading small group adventure tour operator, and we focus all our energy on delivering exceptional travel experiences.
+                        </p>
+                    </div>
+                </section>
+                <section class="reviews">
+                    <div class="l_container">
+                        <div>
+                            <div name="name" class="r_list">
+                                <div class="l_container">
+                                    <div class="h_box">
+                                        <div class="rl_header">
+                                            <span class="h_sub">
+                                                average rating
+                                            </span>
+                                            <div class="star" title="4.7" style="position:relative; box-sizing: border-box; display: inline-block;">
+
+                                            </div>
+                                        </div>
+                                        <div class="rl_filter">
+                                            <div class="rl_grid">
+                                                <div class="f_group">
+                                                    <label for="tourType" class="f_label">
+                                                        <span>Types</span>
+                                                    </label>
+                                                    <select class="f_control" name="tourType" id="tourType">
+                                                        <option value="All Types">All Types</option>
+                                                        <option value="All Types"></option>
+                                                        <option value="All Types"></option>
+                                                    </select>
+                                                </div>
+                                                <div class="f_group">
+                                                    <label for="rating" class="f_label">
+                                                        <span>Rating</span>
+                                                    </label>
+                                                    <select class="f_control" name="rating" id="rating">
+                                                        <option value="#">All reviews</option>
+                                                        <option value="1">1</option>
+                                                        <option value="1">2</option>
+                                                        <option value="1">3</option>
+                                                        <option value="1">4</option>
+                                                        <option value="1">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="f_group">
+                                                    <label for="timeFrame" class="f_label">
+                                                        <span>timeFrame</span>
+                                                    </label>
+                                                    <select class="f_control" name="timeFrame" id="timeFrame">
+                                                        
+                                                        <option value="most_recent">most recent</option>
+                                                        <option value="least_recent">least recent</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>                                                                               
                                     </div>
-                                    <div class="w_info">
-                                        <h2 class="pro_name">
-                                            <span>Pinor Noir</span>
-                                        </h2>
-                                        <p>
-                                            item code:
-                                            <span>a1111</span>
-                                        </p>
-                                        <p>
-                                            item price:
-                                            <span>123</span>
-                                        </p>
-                                        <p>
-                                            qty:
-                                            <span>1</span>
-                                            <a class="remove_item" href="#">
-                                                <span class="r_item">added by mistake?</span>
-                                                <i class="fa fa-trash-0" aria-hidden="true"></i>
-                                            </a>
-                                        </p>
+                                    <div>
+                                        <div class="r_section">
+                                            <div class="star_section">
+
+                                            </div>
+                                            <div class="heading4"> 
+                                                Half-Day tour
+                                            </div>
+                                            <div class="author_title">
+                                                <b>kim</b>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>
+                                                    <span class="text">
+                                                        our tour guide kim was so nice. I was very satisfied
+
+                                                        <span class="moretext" role="presentation" style="color:skyblue; cursor:pointer;">Read more</span>
+                                                        <span class="moretext" role="presentation" style="color:skyblue; cursor:pointer;">Read less</span>
+                                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r_section">
+                                            <div class="star_section">
+
+                                            </div>
+                                            <div class="heading4"> 
+                                                Half-Day tour
+                                            </div>
+                                            <div class="author_title">
+                                                <b>kim</b>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>
+                                                    <span class="text">
+                                                        our tour guide kim was so nice. I was very satisfied
+
+                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read more</span>
+                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read less</span>
+                                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r_section">
+                                            <div class="star_section">
+
+                                            </div>
+                                            <div class="heading4"> 
+                                                Half-Day tour
+                                            </div>
+                                            <div class="author_title">
+                                                <b>kim</b>
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>
+                                                    <span class="text">
+                                                        our tour guide kim was so nice. I was very satisfied
+
+                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read more</span>
+                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read less</span>
+                                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
+
                                 </div>
                             </div>
-                            <div class="cm_right">
-                                <h2>
-                                    cart summary:
-                                    <span class="items">1 items</span>
-                                </h2>
-                                <p>
-                                    order subtotal:
-                                    <b>
-                                        <span>20,000 원</span>
-                                    </b>
-                                </p>
-                                <a href="cart.html">
-                                    <span>view cart & checkout</span>
-                                </a>
-                                <a href="#">
-                                    <span>
-                                        continue shopping
-                                        <i class="fa fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
-                
-
                         </div>
                     </div>
-                </div>
-            </div>
-
-            
-            
-            
-            
-            <!--메인 영역-->
-            
 
 
+                </section>
 
 
-
-                <!-- 투어 보기-->
-                <main class="l_main" role="main">
-                    <section class="t_banner">
-                        <div class="l_container">
-                            <div class="tb_inner">
-                                <h2>pink wine</h2>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="t_page">
-                        <div class="l_container">
-                            <nav class="breadcrumbs">
-                                <ul class="breadcrumbs_list">
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">Home</a>
-                                    </li>
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">View</a>
-                                    </li>
-                                    <li class="breadcrumbs_item">
-                                        <a class="breadcrumbs_link" href="#">wine</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <br>
-                            <div class="tl_grid">
-                                <div>                                    
-                                    <div class="thumbnail_gallery">
-                                        <div class="tg_wrapper">
-                                            <div class="tg swiper">
-                                                <div class="swiper_wrapper">
-
-                                                    <div class="swiper_slide swiper_slide" >
-                                                        <a href="#">
-                                                            <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
-                                                                <img class="halftourimg"src="/winery/img/pinkwine.png" alt="Half-Day">
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    
-                                                    
-                                                </div>    
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    
-
-
-
-
-
-
-                                    <div class="tc_content">
-                                        <h3 class="heading3">pink wine</h3>
-                                       
-                                            
-                                        <div>
-                                        <p class="tc_description">
-                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
-                                            와인 상세설명
-
-                                        </p>
-                                        <p class="tc_description">
-                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
-                                            와인 상세설명
-
-                                        </p>
-                                        <p class="tc_description">
-                                            Enjoy our wine, incredible scenery and fascinating wine as we show you the highlights
-                                            와인 상세설명
-
-                                        </p>
-                                        
-                                        </div>
-                                
-                                                    
-                                    </div>
-                                
-                                  
-                                </div>                                       
-                                <section class="side_box">
-                                    <div class="box">
-                                        <h3 class="heading3">pink wine</h3>
-                                        <dl>
-                                            <div>
-                                                <dt>count</dt>
-                                                <dd>1</dd>
-                                            </div>
-                                            <div>
-                                                <dt>Price</dt>
-                                                <dd>50,000</dd>
-                                            </div>
-                                        </dl>
-                                        <div class="c_button">
-                                           
-                                           <!-- <button type="button" class="t_button" >
-                                                <a href="javascript:openModal('modal1');" class="button modal-open">Add to cart</a>
-                                                
-                                            </button>
-                                            -->
-                                            <button type="button" class="t_button button modal-open" onclick="location.href='javascript:openModal(modal)'">
-                                                Add to cart
                 
-                                                
-                                            </button>
-
-                                        </div>
-                                        <div class="t_button">
-                                            <a class="tc_button" href="#">Contact us</a>
-                                        </div>
-                                    </div>
-
-
-                                </section>
-
-                                
-
-
-                            </div>            
-                        </div>
-                    </div>
-                </main>
-
+               
+            
+            </main>
 
             <!--푸터 영역-->
             <footer class="footer">
@@ -811,64 +725,40 @@
     <script>
    
         // 헤더 스크롤
-     $(function(){
-     
-     var $header = $('.header');
-     $(window).scroll(function(){
-     if($(this).scrollTop() > 0){
-         $header.addClass('sticky');
-     }else{
-         $header.removeClass('sticky');
-     }
-     });
-     
-     
-     
-     $(function(){
-            
-            var box = $('.box');
-
-            $(window).scroll(function(){
-                
-                var t = $(this).scrollTop();
-
+         $(function(){
         
-                if(t > 330 ){
-                    box.css({
-                        'position':'fixed',
-                         'top':'109px',
-                         'width':'300px'  
-                                 
-                        })
-                  
-                }else{
-                    box.css({'position':'static'
-                    
-                    
-                    })
-                }
-            });
-        });
-  
-     });
-
-     function openModal(modalname){
-      document.get
-      $("#modal").fadeIn(300);
-      $("."+modalname).fadeIn(300);
-     
-    }
-    
-    $("#modal, .close").on('click',function(){
-      $("#modal").fadeOut(300);
-      $(".modal-con").fadeOut(300);
-    });
-    
+         var $header = $('.header');
+         $(window).scroll(function(){
+         if($(this).scrollTop() > 0){
+             $header.addClass('sticky');
+         }else{
+             $header.removeClass('sticky');
+         }
+         });
 
 
-     
+
+         // 슬릭슬라이드
+
+         $('.swiper_wrapper').slick({
+           slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
+           infinite : true, 	//무한 반복 옵션	 
+           slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
+           slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수      	
+           arrows : true, 		// 옆으로 이동하는 화살표 표시 여부
+           dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
+           autoplay : false,			// 자동 스크롤 사용 여부
+           draggable : true, 	//드래그 가능 여부 
+        
+         });
+
+
+         });
+
+
+
     </script>
 
-
+  
 </body>
 </html>
