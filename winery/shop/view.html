@@ -21,6 +21,12 @@
     <!-- 제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+출처: https://rongscodinghistory.tistory.com/40 [악덕고용주의 개발 일기]
+
+
     <!-- 슬릭 js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   
@@ -465,7 +471,7 @@
                                             </div>
                                         </dl>
                                         <div class="c_button">
-                                            <button type="button" class="t_button">
+                                            <button type="button" class="t_button" id="b_move">
                                                 book
                                             </button>
                                         </div>
@@ -480,7 +486,28 @@
                                 
 
 
-                            </div>            
+                            
+                            </div>  
+                            
+                            <div class="t_dates">
+                                <h2 class="heading2">Available dates</h2>
+                                <p>
+                                    Only $99 to secure your seat unless you book within 45 days of departure.
+          Once your spot is booked, you can log in and customise your tour with any extra experiences or activities up to
+          45 days before departure.
+                                </p>
+                                <div class="td_filters">
+                                    <div class="tdf_grid">
+                                        <div class="form_group">
+                                            <label for="toredepartures" class="fg_label"></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
                         </div>
                     </div>
                 </main>
@@ -650,12 +677,30 @@
             });
         });
   
-
+     });
     
 
 
-     });
-     
+     $(document).ready(function(){
+
+        $('#b_move').click(function(){
+
+    var offset = $('.t_dates').offset(); //선택한 태그의 위치를 반환
+
+        //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.6초 동안 부드럽게 해당 위치로 이동함 
+
+    $('html').animate({scrollTop : offset.top}, 600);
+
+    });
+
+    });
+
+
+
+
+
+
+   
      
      
     </script>

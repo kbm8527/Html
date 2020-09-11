@@ -18,6 +18,8 @@
     <!-- 제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
     <!-- 슬릭 js -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/jsvascript" src="/winery/js/function.js"></script>
@@ -202,7 +204,16 @@
             padding: 10px;
         }
 
+     
+        .morecontent span {
+            display: none;
+        }
 
+        .moretext {
+            display: block;
+            color:skyblue; 
+            cursor:pointer;
+        }
 
     </style>
    
@@ -332,6 +343,8 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">   
                                                 <div class="nav_main">
                                                     <a class="snav_link" href="#">
                                                         <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
@@ -342,10 +355,7 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
-                                                <div class="tsnav">
-                                                 
-
-                                                </div>
+                                               
                                             </li>
                                         </ul>
                                     </div>
@@ -384,7 +394,8 @@
                                                     </a>
                                                     <button type="button" class="snav_link-arrow"></button>
                                                 </div>
-                                                
+                                            </li>
+                                            <li class="snav_item" style="background-color: darkcyan;">
                                                 <div class="nav_main">
                                                     <a class="snav_link" href="#">
                                                         <div class="snav_link-bar" style="background-color: darkkhaki;"></div>
@@ -499,8 +510,9 @@
                                                     </label>
                                                     <select class="f_control" name="tourType" id="tourType">
                                                         <option value="All Types">All Types</option>
-                                                        <option value="All Types"></option>
-                                                        <option value="All Types"></option>
+                                                        <option value="All Types">Half-Day tour</option>
+                                                        <option value="All Types">Full-Day tour</option>
+                                                        <option value="All Types">Private tour</option>
                                                     </select>
                                                 </div>
                                                 <div class="f_group">
@@ -542,12 +554,33 @@
                                             </div>
                                             <br>
                                             <div>
+                                                <div class="textcontent">
+                                                    <span class="text">
+                                                        our tour guide kim was so nice. I was very satisfied our tour guide kim was so nice. I was very satisfied our tour guide kim was so nice. I was very satisfied
+                                                        our tour guide kim was so nice. I was very satisfied our tour guide kim was so nice. I was very satisfied our tour guide kim was so nice. I was very satisfied
+
+                                                    </span>
+                                                       
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="r_section">
+                                            <div class="star_section">
+
+                                            </div>
+                                            <div class="heading4"> 
+                                                Half-Day tour
+                                            </div>
+                                            <div class="author_title">
+                                                <b>kim</b>
+                                            </div>
+                                            <br>
+                                            <div>
                                                 <div>
                                                     <span class="text">
                                                         our tour guide kim was so nice. I was very satisfied
 
-                                                        <span class="moretext" role="presentation" style="color:skyblue; cursor:pointer;">Read more</span>
-                                                        <span class="moretext" role="presentation" style="color:skyblue; cursor:pointer;">Read less</span>
                                                         
                                                     </span>
                                                 </div>
@@ -569,31 +602,7 @@
                                                     <span class="text">
                                                         our tour guide kim was so nice. I was very satisfied
 
-                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read more</span>
-                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read less</span>
-                                                        
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="r_section">
-                                            <div class="star_section">
-
-                                            </div>
-                                            <div class="heading4"> 
-                                                Half-Day tour
-                                            </div>
-                                            <div class="author_title">
-                                                <b>kim</b>
-                                            </div>
-                                            <br>
-                                            <div>
-                                                <div>
-                                                    <span class="text">
-                                                        our tour guide kim was so nice. I was very satisfied
-
-                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read more</span>
-                                                        <span class="moretext" role="presentation" style="color:gray; cursor:pointer;">Read less</span>
+                                                      
                                                         
                                                     </span>
                                                 </div>
@@ -755,6 +764,45 @@
 
          });
 
+         $(document).ready(function() {
+    // Configure/customize these variables.
+    var showChar = 150;  // How many characters are shown by default
+    var ellipsestext = "...";
+    var moretext = 'Read more';
+    var lesstext = "Read less";
+    
+
+    $('.text').each(function() {
+        var text = $(this).html();
+ 
+        if(text.length > showChar) {
+ 
+            var c = text.substr(0, showChar);
+            var h = text.substr(showChar, text.length - showChar);
+ 
+            var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a class="moretext" >' + moretext + '</a></span>';
+ 
+            $(this).html(html);
+        }
+ 
+    });
+ 
+    $(".moretext").click(function(){
+        if($(this).hasClass("less")) {
+            $(this).removeClass("less");
+            $(this).html(moretext);
+        } else {
+            $(this).addClass("less");
+            $(this).html(lesstext);
+        }
+        $(this).parent().prev().toggle();
+        $(this).prev().toggle();
+        return false;
+    });
+});
+       
+
+         
 
 
     </script>
